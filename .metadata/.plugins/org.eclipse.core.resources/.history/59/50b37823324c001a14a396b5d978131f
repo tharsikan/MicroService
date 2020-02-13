@@ -1,0 +1,7 @@
+package com.db.jpademo.entity;
+
+
+@Entity
+public class Employee {
+
+}

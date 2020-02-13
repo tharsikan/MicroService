@@ -1,0 +1,5 @@
+package com.db.jpademo2.model;
+
+public class Employee {
+
+}

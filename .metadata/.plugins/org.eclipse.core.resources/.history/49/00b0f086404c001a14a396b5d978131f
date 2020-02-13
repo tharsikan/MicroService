@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:jdbc:mysql:3306//jpa_db
+    username: root
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: create
+  application:
+    name: mapiis
+server:
+  port: 8084
