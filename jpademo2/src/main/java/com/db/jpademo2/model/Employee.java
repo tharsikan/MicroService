@@ -4,6 +4,9 @@ import javax.persistence.*;
 
 import com.db.pojo.Allocation;
 
+import lombok.Data;
+import lombok.Setter;
+
 import java.util.List;
 
 @Entity
@@ -18,44 +21,16 @@ public class Employee {
 	
 	@Transient
 	private Allocation[] allocations;
-	
-	
-
-	
-
-	public Allocation[] getAllocations() {
-		return allocations;
-	}
-
-	public void setAllocations(Allocation[] allocations) {
-		this.allocations = allocations;
-	}
-
-	public Long getId() {
-		return id;
-	}
 
 	@OneToMany(mappedBy = "employee", cascade = CascadeType.ALL)
 	private List<Telephone> telephoneList;
-
-	public List<Project> getProjects() {
-		return projects;
-	}
-
-	public void setProjects(List<Project> projects) {
-		this.projects = projects;
-	}
 
 	@ManyToMany(cascade = CascadeType.ALL)
 	@JoinTable(name = "project_employee",joinColumns = {@JoinColumn(name = "project_id")},inverseJoinColumns = {@JoinColumn(name = "employee_id")})
 	private List<Project> projects;
 
-	public List<Telephone> getTelephoneList() {
-		return telephoneList;
-	}
-
-	public void setTelephoneList(List<Telephone> telephoneList) {
-		this.telephoneList = telephoneList;
+	public Long getId() {
+		return id;
 	}
 
 	public void setId(Long id) {
@@ -77,4 +52,29 @@ public class Employee {
 	public void setAddress(Address address) {
 		this.address = address;
 	}
+
+	public Allocation[] getAllocations() {
+		return allocations;
+	}
+
+	public void setAllocations(Allocation[] allocations) {
+		this.allocations = allocations;
+	}
+
+	public List<Telephone> getTelephoneList() {
+		return telephoneList;
+	}
+
+	public void setTelephoneList(List<Telephone> telephoneList) {
+		this.telephoneList = telephoneList;
+	}
+
+	public List<Project> getProjects() {
+		return projects;
+	}
+
+	public void setProjects(List<Project> projects) {
+		this.projects = projects;
+	}
+
 }

@@ -2,6 +2,9 @@ package com.db.jpademo2.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import lombok.Data;
+import lombok.Setter;
+
 import javax.persistence.*;
 
 @Entity
@@ -16,27 +19,30 @@ public class Telephone {
     @JsonIgnore
     Employee employee;
 
-    public Employee getEmployee() {
-        return employee;
-    }
+	public Long getId() {
+		return id;
+	}
 
-    public void setEmployee(Employee employee) {
-        this.employee = employee;
-    }
+	public void setId(Long id) {
+		this.id = id;
+	}
 
-    public Long getId() {
-        return id;
-    }
+	public String getNumber() {
+		return number;
+	}
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+	public void setNumber(String number) {
+		this.number = number;
+	}
 
-    public String getNumber() {
-        return number;
-    }
+	public Employee getEmployee() {
+		return employee;
+	}
 
-    public void setNumber(String number) {
-        this.number = number;
-    }
+	public void setEmployee(Employee employee) {
+		this.employee = employee;
+	}
+    
+    
+ 
 }
